@@ -2,17 +2,17 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getUser = createAsyncThunk("_", async () => {
-  const res = await axios.get("http://localhost:5000/api/user/");
+  const res = await axios.get("http://192.168.152.134/api/user/");
   return res.data;
 });
 
 export const deleteUser = createAsyncThunk("__", async (id) => {
-  const res = await axios.delete(`http://localhost:5000/api/user/${id}`);
+  const res = await axios.delete(`http://192.168.152.134/api/user/${id}`);
   return res.data;
 });
 
 export const createUser = createAsyncThunk("___", async (username) => {
-  const res = await axios.post("http://localhost:5000/api/user/", {
+  const res = await axios.post("http://192.168.152.134/api/user/", {
     username,
   });
   return res.data;
